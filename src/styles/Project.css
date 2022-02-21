@@ -1,0 +1,39 @@
+
+.project{
+    cursor: pointer;
+    width: 100%;
+    box-shadow: 2px 2px 2px rgb(211, 210, 210), -1px -1px 2px rgb(211, 210, 210);
+}
+
+.project a{
+    text-decoration: none;
+    color: rgb(71, 71, 71);
+}
+
+.project:hover{
+    box-shadow: 4px 4px 4px rgb(211, 210, 210), -4px -4px 4px rgb(211, 210, 210);
+}
+
+
+
+img{
+    width: 100%;
+    height: 15em;
+    object-fit: cover;
+    border-bottom: 2px solid rgb(109, 109, 109);
+}
+
+.title-content{
+    padding: 1em;
+}
+
+
+.title-content h1{
+    font-family: 'Lato';
+    color: rgb(97, 97, 97);
+}
+
+.title-content p{
+    color: rgb(97, 97, 97);
+    font-size: 100%;
+}

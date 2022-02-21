@@ -1,0 +1,19 @@
+
+.project-container{
+    padding: 2em 2em 7em 2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px 35px;
+}
+
+html,body{
+    overflow-y: visible !important;
+}
+
+@media screen and (max-width: 600px){
+    .project-container{
+        grid-template-columns: 1fr;
+    }
+
+}
+
