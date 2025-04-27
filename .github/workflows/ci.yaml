@@ -17,6 +17,9 @@ jobs:
           node-version: 22
           cache: pnpm
       
+      - name: Install pnpm v10
+        run: npm install -g pnpm@^10.9.0
+          
       - name: 'Install Dependencies'
         run: pnpm install
       
