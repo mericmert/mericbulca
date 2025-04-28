@@ -1,38 +1,55 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "../globals.css";
-import { ThemeProvider } from "@/providers/theme-provider";
-import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
-import { Separator } from "@/components/ui/separator";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { ThemeProvider } from "@/components/providers/theme-provider";
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import { SidebarNav } from "@/components/layouts/sidebar-nav";
+import { cn } from "@/lib/utils";
+import { geistMono, geistSans } from "@/lib/font";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import "@/styles/globals.css";
+import ContentHeader from "@/components/layouts/content-header";
 
 export const metadata: Metadata = {
   title: "Meriç Mert Bulca",
+  creator: "Meriç Mert Bulca",
+  authors: [
+    {
+      name: "Meriç Mert Bulca",
+      url: "https://linkedin.com/in/mericmertbulca",
+    },
+  ],
   description:
     "Software Engineer and MSc student in Big Data Engineering at the University of Amsterdam and Vrije Universiteit Amsterdam.",
+  keywords: [
+    "Meriç Mert Bulca",
+    "Software Engineer",
+    "Big Data Engineering",
+    "University of Amsterdam",
+    "Vrije Universiteit Amsterdam",
+    "MSc",
+    "Amsterdam",
+    "Turkey",
+    "Software Development",
+    "Personal Website",
+    "Portfolio",
+    "Blog",
+  ],
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+type RootLayoutProps = Readonly<{
   children: React.ReactNode;
-}>) {
+}>;
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html suppressHydrationWarning lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head />
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${geistMono.className} antialiased p-10 scroll-locked:!p-10`}
+        className={cn(
+          "antialiased p-10 scroll-locked:!p-10",
+          geistSans.variable,
+          geistMono.variable,
+          geistMono.className
+        )}
       >
         <ThemeProvider
           attribute="class"
@@ -41,24 +58,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <SidebarProvider>
-            <AppSidebar />
+            <SidebarNav />
             <SidebarInset>
-              <header className="flex sticky inset-x-0 top-0 h-14 shrink-0 items-center gap-2 px-4">
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <SidebarTrigger className="-ml-1" />
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>Toggle sidebar (⌘+B)</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-                <Separator
-                  orientation="vertical"
-                  className="mr-2 data-[orientation=vertical]:h-4"
-                />
-              </header>
+              <ContentHeader />
               <main>{children}</main>
             </SidebarInset>
           </SidebarProvider>

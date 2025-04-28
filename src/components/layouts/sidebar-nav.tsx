@@ -7,8 +7,8 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import SiteLogo from "./site-logo";
-import ThemeToggle from "./theme-toggle";
+import SiteLogo from "../site-logo";
+import ThemeToggle from "../theme-toggle";
 import Link from "next/link";
 
 interface SidebarItem {
@@ -23,7 +23,7 @@ const SidebarItems: Array<SidebarItem> = [
   { title: "Media", href: "/media" },
 ];
 
-export function AppSidebar() {
+export function SidebarNav() {
   return (
     <Sidebar variant="inset">
       <SidebarHeader>
