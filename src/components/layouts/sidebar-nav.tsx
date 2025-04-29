@@ -25,7 +25,7 @@ const SidebarItems: Array<SidebarItem> = [
 
 export function SidebarNav() {
   return (
-    <Sidebar variant="inset">
+    <Sidebar variant="inset" className="border-l border-dashed">
       <SidebarHeader>
         <SiteLogo />
       </SidebarHeader>

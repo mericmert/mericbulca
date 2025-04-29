@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { SidebarNav } from "@/components/layouts/sidebar-nav";
-import { cn } from "@/lib/utils";
 import { geistMono, geistSans } from "@/lib/font";
+import { cn } from "@/lib/utils";
 
 import "@/styles/globals.css";
 import ContentHeader from "@/components/layouts/content-header";
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     },
   ],
   description:
-    "Software Engineer and MSc student in Big Data Engineering at the University of Amsterdam and Vrije Universiteit Amsterdam.",
+    "Software Engineer and MSc student in Big Data Engineering at the University of Amsterdam and Vrije Universiteit.",
   keywords: [
     "Meriç Mert Bulca",
     "Software Engineer",
@@ -33,6 +33,22 @@ export const metadata: Metadata = {
     "Portfolio",
     "Blog",
   ],
+  openGraph: {
+    title: "Meriç Mert Bulca",
+    // TODO: Add a propert image
+    description:
+      "Software Engineer and MSc student in Big Data Engineering at the University of Amsterdam and Vrije Universiteit.",
+    // url: "https://mericbulca.com", //TODO: Add the correct URL
+    siteName: "Meriç Mert Bulca",
+    type: "website",
+    locale: "en_US",
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 type RootLayoutProps = Readonly<{
@@ -44,12 +60,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" suppressHydrationWarning>
       <head />
       <body
-        className={cn(
-          "antialiased p-10 scroll-locked:!p-10",
-          geistSans.variable,
-          geistMono.variable,
-          geistMono.className
-        )}
+        className={cn("antialiased", geistSans.variable, geistMono.variable, geistSans.className)}
       >
         <ThemeProvider
           attribute="class"
@@ -58,13 +69,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
           disableTransitionOnChange
         >
           <SidebarProvider>
-            <SidebarNav />
-            <SidebarInset>
-              <ContentHeader />
-              <main>{children}</main>
-            </SidebarInset>
+            <div className="mx-auto flex max-w-6xl">
+              <SidebarNav />
+              <SidebarInset className="flex-1">
+                <ContentHeader />
+                {children}
+              </SidebarInset>
+            </div>
           </SidebarProvider>
         </ThemeProvider>
+        {/* {TODO: Add Script for analytics} */}
       </body>
     </html>
   );
