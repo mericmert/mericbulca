@@ -42,10 +42,19 @@ export const metadata: Metadata = {
   },
 };
 
+const META_THEME_COLORS = {
+  light: "#FFFFFF",
+  dark: "#0a0a0a",
+};
+
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: META_THEME_COLORS.light },
+    { media: "(prefers-color-scheme: dark)", color: META_THEME_COLORS.dark },
+  ],
 };
 
 type RootLayoutProps = Readonly<{
@@ -55,15 +64,19 @@ type RootLayoutProps = Readonly<{
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
       <body
-        className={cn("antialiased", geistSans.variable, geistMono.variable, geistSans.className)}
+        className={cn(
+          "min-h-svh bg-background font-sans antialiased",
+          geistSans.variable,
+          geistMono.variable
+        )}
       >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
+          enableColorScheme
         >
           {children}
         </ThemeProvider>
