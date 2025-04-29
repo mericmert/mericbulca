@@ -16,14 +16,14 @@ export default function IndexPage() {
           <strong> OBSS</strong> (Open Business Software Solutions). I completed my BSc in Computer
           Science at
           <strong> Sabanci University</strong>, and soon I&apos;ll be pursuing an
-          <strong> MSc in Big Data Engineering</strong> — a joint degree between
+          <strong> MSc in Big Data Engineering</strong>, a joint degree between
           <strong> UvA</strong> and <strong>VU Amsterdam</strong>.
         </p>
       </section>
 
       <section>
         <p className="leading-relaxed">
-          Through this blog, I&apos;ll be sharing my <strong>learning journey</strong> — from
+          Through this blog, I&apos;ll be sharing my <strong>learning journey</strong>, from
           tackling real-world engineering problems to exploring in-depth research. I hope my
           experiences will inspire and inform. If you&apos;re looking for a fellow engineer to
           connect with, <strong>let&apos;s connect!</strong>
