@@ -20,15 +20,14 @@ interface SidebarItem {
 }
 
 const SidebarItems: Array<SidebarItem> = [
+  { title: "About", href: "/" },
   { title: "Blog", href: "/blog" },
-  { title: "About", href: "/about" },
   { title: "Projects", href: "/projects" },
   { title: "Media", href: "/media" },
 ];
 
 export function SidebarNav() {
   const pathname = usePathname();
-  console.log(pathname);
 
   return (
     <Sidebar variant="inset" className="border-r border-dashed">
