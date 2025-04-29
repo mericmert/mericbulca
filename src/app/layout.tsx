@@ -32,10 +32,18 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Meriç Mert Bulca",
-    // TODO: Add a propert image
+    images: [
+      {
+        url: "https://www.mericbulca.com/og-image.png",
+        width: 1200,
+        height: 338,
+        alt: "Meriç Mert Bulca Blog",
+        type: "image/png",
+      },
+    ],
     description:
       "Software Engineer and MSc student in Big Data Engineering at the University of Amsterdam and Vrije Universiteit.",
-    // url: "https://mericbulca.com", //TODO: Add the correct URL
+    url: "https://www.mericbulca.com",
     siteName: "Meriç Mert Bulca",
     type: "website",
     locale: "en_US",
