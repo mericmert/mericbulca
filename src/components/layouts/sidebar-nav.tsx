@@ -1,3 +1,4 @@
+"use client";
 import {
   Sidebar,
   SidebarContent,
@@ -10,6 +11,8 @@ import {
 import SiteLogo from "../site-logo";
 import ThemeToggle from "../theme-toggle";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 interface SidebarItem {
   title: string;
@@ -24,8 +27,11 @@ const SidebarItems: Array<SidebarItem> = [
 ];
 
 export function SidebarNav() {
+  const pathname = usePathname();
+  console.log(pathname);
+
   return (
-    <Sidebar variant="inset" className="border-l border-dashed">
+    <Sidebar variant="inset" className="border-r border-dashed">
       <SidebarHeader>
         <SiteLogo />
       </SidebarHeader>
@@ -35,7 +41,10 @@ export function SidebarNav() {
             {SidebarItems.map((item) => (
               <SidebarMenuItem key={item.title}>
                 <SidebarMenuButton asChild>
-                  <Link href={item.href}>
+                  <Link
+                    className={cn(pathname == item.href ? "bg-sidebar-accent" : "bg-sidebar")}
+                    href={item.href}
+                  >
                     <span>{item.title}</span>
                   </Link>
                 </SidebarMenuButton>
