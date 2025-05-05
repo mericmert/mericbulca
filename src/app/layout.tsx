@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/react"
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { geistMono, geistSans } from "@/lib/font";
 import { cn } from "@/lib/utils";
@@ -6,7 +7,7 @@ import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "Meriç Mert Bulca",
+  title: "Meriç Mert Bulca'S Blog",
   creator: "Meriç Mert Bulca",
   authors: [
     {
@@ -30,11 +31,16 @@ export const metadata: Metadata = {
     "Personal Website",
     "Blog",
   ],
+  twitter: {
+    card: "summary_large_image",
+    site: "@mericmertbulca",
+    creator: "@mericmertbulca",
+  },
   openGraph: {
     title: "Meriç Mert Bulca",
     images: [
       {
-        url: "https://www.mericbulca.com/og-image.png",
+        url: "/og-image.png",
         width: 1200,
         height: 338,
         alt: "Meriç Mert Bulca Blog",
@@ -48,6 +54,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
   },
+  metadataBase: new URL("https://www.mericbulca.com"),
 };
 
 const META_THEME_COLORS = {
@@ -88,7 +95,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
           {children}
         </ThemeProvider>
-        {/* {TODO: Add Script for analytics} */}
+        <Analytics />
       </body>
     </html>
   );
