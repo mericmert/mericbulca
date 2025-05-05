@@ -9,7 +9,7 @@ type NavLayoutProps = Readonly<{
 export default function AppLayout({ children }: NavLayoutProps) {
   return (
     <SidebarProvider>
-      <div className="mx-auto flex max-w-6xl">
+      <div className="mx-auto flex w-6xl">
         <SidebarNav />
         <SidebarInset className="flex-1">
           <ContentHeader />
