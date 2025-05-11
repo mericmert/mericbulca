@@ -4,9 +4,9 @@ import { SidebarTrigger } from "../ui/sidebar";
 
 export default function ContentHeader() {
   return (
-    <header className="bg-background sticky z-50 inset-x-0 top-0 h-14 gap-2 px-4">
+    <header className="bg-background sticky md:hidden z-50 inset-x-0 top-0 h-14 gap-2 px-4">
       <div className="flex items-center h-full group">
-        <div id="sidebar-toggle" className="md:hidden">
+        <div id="sidebar-toggle">
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
