@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -44,6 +45,42 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+   /* Prose theme colors */
+  --color-prose-body: var(--foreground);
+  --color-prose-headings: var(--primary);
+  --color-prose-lead: var(--muted-foreground);
+  --color-prose-links: var(--primary);
+  --color-prose-bold: var(--primary);
+  --color-prose-counters: var(--muted-foreground);
+  --color-prose-bullets: var(--muted-foreground);
+  --color-prose-hr: var(--border);
+  --color-prose-quotes: var(--muted-foreground);
+  --color-prose-quote-borders: var(--border);
+  --color-prose-captions: var(--muted-foreground);
+  --color-prose-code: var(--accent-foreground);
+  --color-prose-pre-code: var(--muted);
+  --color-prose-pre-bg: var(--muted);
+  --color-prose-th-borders: var(--border);
+  --color-prose-td-borders: var(--border);
+
+    /* Prose invert colors */
+  --color-prose-invert-body: var(--background);
+  --color-prose-invert-headings: var(--primary-foreground);
+  --color-prose-invert-lead: var(--secondary-foreground);
+  --color-prose-invert-links: var(--primary-foreground);
+  --color-prose-invert-bold: var(--primary-foreground);
+  --color-prose-invert-counters: var(--secondary-foreground);
+  --color-prose-invert-bullets: var(--secondary-foreground);
+  --color-prose-invert-hr: var(--border);
+  --color-prose-invert-quotes: var(--secondary-foreground);
+  --color-prose-invert-quote-borders: var(--border);
+  --color-prose-invert-captions: var(--secondary-foreground);
+  --color-prose-invert-code: var(--accent);
+  --color-prose-invert-pre-code: var(--background);
+  --color-prose-invert-pre-bg: var(--card);
+  --color-prose-invert-th-borders: var(--border);
+  --color-prose-invert-td-borders: var(--border);
 }
 
 :root {
@@ -121,5 +158,91 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  
+  /* Custom prose styles */
+  .prose {
+    --tw-prose-body: var(--color-prose-body);
+    --tw-prose-headings: var(--color-prose-headings);
+    --tw-prose-lead: var(--color-prose-lead);
+    --tw-prose-links: var(--color-prose-links);
+    --tw-prose-bold: var(--color-prose-bold);
+    --tw-prose-counters: var(--color-prose-counters);
+    --tw-prose-bullets: var(--color-prose-bullets);
+    --tw-prose-hr: var(--color-prose-hr);
+    --tw-prose-quotes: var(--color-prose-quotes);
+    --tw-prose-quote-borders: var(--color-prose-quote-borders);
+    --tw-prose-captions: var(--color-prose-captions);
+    --tw-prose-code: var(--color-prose-code);
+    --tw-prose-pre-code: var(--color-prose-pre-code);
+    --tw-prose-pre-bg: var(--color-prose-pre-bg);
+    --tw-prose-th-borders: var(--color-prose-th-borders);
+    --tw-prose-td-borders: var(--color-prose-td-borders);
+  }
+  
+  /* Prose invert styles */
+  .prose-invert {
+    --tw-prose-body: var(--color-prose-invert-body);
+    --tw-prose-headings: var(--color-prose-invert-headings);
+    --tw-prose-lead: var(--color-prose-invert-lead);
+    --tw-prose-links: var(--color-prose-invert-links);
+    --tw-prose-bold: var(--color-prose-invert-bold);
+    --tw-prose-counters: var(--color-prose-invert-counters);
+    --tw-prose-bullets: var(--color-prose-invert-bullets);
+    --tw-prose-hr: var(--color-prose-invert-hr);
+    --tw-prose-quotes: var(--color-prose-invert-quotes);
+    --tw-prose-quote-borders: var(--color-prose-invert-quote-borders);
+    --tw-prose-captions: var(--color-prose-invert-captions);
+    --tw-prose-code: var(--color-prose-invert-code);
+    --tw-prose-pre-code: var(--color-prose-invert-pre-code);
+    --tw-prose-pre-bg: var(--color-prose-invert-pre-bg);
+    --tw-prose-th-borders: var(--color-prose-invert-th-borders);
+    --tw-prose-td-borders: var(--color-prose-invert-td-borders);
+  }
+  
+  .prose code:not(.hljs) {
+    background-color: var(--accent);
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 0.875em;
+  }
+  
+  .prose-invert code:not(.hljs) {
+    background-color: var(--accent);
+    color: var(--foreground);
+  }
+  
+  .prose pre {
+    background-color: var(--muted);
+    color: var(--foreground);
+  }
+  
+  .prose-invert pre {
+    background-color: var(--card);
+    color: var(--background);
+  }
+  
+  .prose blockquote {
+    border-left-color: var(--border);
+    color: var(--muted-foreground);
+  }
+  
+  .prose-invert blockquote {
+    border-left-color: var(--border);
+    color: var(--secondary-foreground);
+  }
+  
+  .prose a {
+    color: var(--primary);
+    text-decoration-line: underline;
+    text-underline-offset: 2px;
+  }
+  
+  .prose a:hover {
+    text-decoration-line: none;
+  }
+  
+  .prose-invert a {
+    color: var(--primary-foreground);
   }
 }

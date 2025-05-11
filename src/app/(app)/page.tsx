@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function IndexPage() {
   return (
-    <main className="flex flex-col items-start p-4 space-y-6">
+    <main className="flex flex-col items-start space-y-6">
       <header>
         <h1 id="introduction-heading" className="text-2xl font-bold">
           About
@@ -29,7 +29,7 @@ export default function IndexPage() {
         </p>
       </section>
       <section>
-        <div className="flex items-center space-x-6">
+        <div className="flex items-center space-x-6 text-sm">
           <Link
             href="https://github.com/mericmert"
             target="_blank"

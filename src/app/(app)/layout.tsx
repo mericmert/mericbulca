@@ -11,7 +11,7 @@ export default function AppLayout({ children }: NavLayoutProps) {
     <SidebarProvider>
       <div className="mx-auto flex w-6xl">
         <SidebarNav />
-        <SidebarInset className="flex-1">
+        <SidebarInset className="flex-1 p-4">
           <ContentHeader />
           {children}
         </SidebarInset>

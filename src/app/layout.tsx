@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "Meriç Mert Bulca'S Blog",
+  title: "Meriç Mert Bulca",
   creator: "Meriç Mert Bulca",
   authors: [
     {
@@ -81,7 +81,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-svh bg-background font-sans antialiased",
+          "min-h-svh bg-background font-mono antialiased",
           geistSans.variable,
           geistMono.variable
         )}
