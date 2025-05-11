@@ -17,7 +17,7 @@ export default function NotFoundCard({
   homeLabel = "Go to Home",
 }: NotFoundCardProps) {
   return (
-    <Card className="w-full mx-auto mt-20 tracking-tighter bg-transparent border-x-0 rounded-none">
+    <Card className="w-full mx-auto tracking-tighter bg-transparent border-x-0 rounded-none">
       <CardHeader>
         <div className="flex justify-center text-muted-foreground w-full">
           <div className="flex justify-center items-center border-2 border-dashed rounded-full w-24 h-24">
