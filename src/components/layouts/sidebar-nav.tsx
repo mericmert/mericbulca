@@ -25,7 +25,7 @@ interface SidebarItem {
 const SidebarItems: Array<SidebarItem> = [
   { title: "About", href: "/" },
   { title: "Blog", href: "/blog" },
-  { title: "Projects", href: "/projects" },
+  { title: "Projects", href: "/projects", disabled: true },
   { title: "Media", href: "/media", disabled: true },
 ];
 

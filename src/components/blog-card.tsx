@@ -15,7 +15,7 @@ export default function BlogCard({ post }: { post: MdxPost }) {
 
   return (
     <Link href={`/blog/${slug}`} className="group" prefetch>
-      <Card className="flex h-full flex-col justify-between">
+      <Card className="flex h-full flex-col justify-between border-0 border-b first:border-t last:border-b shadow-none rounded-none bg-transparent">
         <CardHeader className="pb-2">
           <h3 className="text-lg font-semibold leading-tight group-hover:text-primary">{title}</h3>
           <time className="block text-xs text-muted-foreground">{formatDate(date)}</time>

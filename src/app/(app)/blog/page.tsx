@@ -26,7 +26,7 @@ export default async function BlogPage() {
       </header>
 
       {posts.length > 0 ? (
-        <section className="grid gap-6 grid-cols-1">
+        <section className="grid grid-cols-1">
           {posts.map((post) => (
             <BlogCard key={post.slug} post={post} />
           ))}
