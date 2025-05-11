@@ -221,7 +221,7 @@ function Sidebar({
       <div
         data-slot="sidebar-container"
         className={cn(
-          "fixed inset-y-0 z-10 md:relative md:inset-auto",
+          "fixed inset-y-0 z-10 md:sticky md:inset-auto md:top-0",
           "h-svh w-[--sidebar-width] transition-[left,right,width] duration-200 ease-linear md:flex",
           side === "left"
             ? "md:left-auto group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)]"
