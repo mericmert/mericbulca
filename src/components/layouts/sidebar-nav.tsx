@@ -57,7 +57,6 @@ export function SidebarNav() {
                 ) : (
                   <SidebarMenuButton asChild>
                     <Link
-                      prefetch={false}
                       className={cn(pathname == item.href ? "bg-sidebar-accent" : "bg-sidebar")}
                       href={item.href}
                       onClick={() => setOpenMobile(false)}

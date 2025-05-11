@@ -3,31 +3,34 @@ import Link from "next/link";
 
 export default function IndexPage() {
   return (
-    <main className="flex flex-col space-y-6">
+    <article className="prose dark:prose-invert">
       <header>
-        <h2 id="introduction-heading" className="text-2xl font-bold">
+        <h2 id="introduction-heading" className="my-0!">
           About
         </h2>
       </header>
+
       <section>
-        <p className="leading-relaxed">
-          Based in <strong>Istanbul, Turkey</strong>, I currently work as a Software Engineer at
-          <strong> OBSS</strong> (Open Business Software Solutions). I completed my BSc in Computer
-          Science at
-          <strong> Sabanci University</strong>, and soon I&apos;ll be pursuing an MSc in Big Data
-          Engineering, a joint degree between
-          <strong> UvA</strong> and <strong>VU Amsterdam</strong>.
+        <p>
+          Based in <strong>Istanbul, Turkey</strong>, I currently work as a software engineer
+          at&nbsp;
+          <strong>OBSS</strong> (Open Business Software Solutions). I completed my BSc in Computer
+          Science at&nbsp;
+          <strong>Sabancı University</strong>, and soon I&apos;ll be pursuing an MSc in Big Data
+          Engineering— a joint degree between&nbsp;<strong>UvA</strong> and{" "}
+          <strong>VU Amsterdam</strong>.
         </p>
       </section>
 
       <section>
-        <p className="leading-relaxed">
-          Through this blog, I&apos;ll be sharing my learning journey, from tackling real-world
-          engineering problems to exploring in-depth research. I hope my experiences will inspire
+        <p>
+          Through this blog I&apos;ll be sharing my learning journey—from tackling real‑world
+          engineering problems to exploring in‑depth research. I hope my experiences will inspire
           and inform. If you&apos;re looking for a fellow engineer to connect with,{" "}
           <strong>let&apos;s connect!</strong>
         </p>
       </section>
+
       <section>
         <div className="flex items-center space-x-6 text-sm">
           <Link
@@ -39,6 +42,7 @@ export default function IndexPage() {
             <GithubIcon className="w-5 h-5" />
             <span>GitHub</span>
           </Link>
+
           <Link
             href="https://linkedin.com/in/mericmertbulca"
             target="_blank"
@@ -48,6 +52,7 @@ export default function IndexPage() {
             <LinkedinIcon className="w-5 h-5" />
             <span>LinkedIn</span>
           </Link>
+
           <Link
             href="https://twitter.com/mericmertbulca"
             target="_blank"
@@ -59,6 +64,6 @@ export default function IndexPage() {
           </Link>
         </div>
       </section>
-    </main>
+    </article>
   );
 }
