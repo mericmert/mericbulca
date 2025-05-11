@@ -25,14 +25,14 @@ export default async function BlogPage() {
         <h2 className="text-2xl font-bold">Posts</h2>
       </header>
 
-      {posts.length > 0 ? (
+      {posts.length > 2 ? (
         <section className="grid grid-cols-1">
           {posts.map((post) => (
             <BlogCard key={post.slug} post={post} />
           ))}
         </section>
       ) : (
-        <div className="rounded-lg border border-dashed py-6 text-center text-muted-foreground">
+        <div className="border-y border-dashed py-6 text-center text-muted-foreground">
           <p className="text-sm">No blog posts found. Please check back later.</p>
         </div>
       )}
