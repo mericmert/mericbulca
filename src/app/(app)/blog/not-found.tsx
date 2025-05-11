@@ -5,6 +5,8 @@ export default function NotFound() {
     <NotFoundCard
       title="Content Not Found"
       message="Sorry, the content you're looking for doesn't exist."
+      homeHref="/blog"
+      homeLabel="Go to Blog Posts"
     />
   );
 }

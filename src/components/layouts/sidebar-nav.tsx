@@ -49,7 +49,7 @@ export function SidebarNav() {
                     disabled
                     className="text-muted-foreground cursor-not-allowed pointer-events-none"
                   >
-                    <div className="flex items-center gap-2 px-3 py-2">
+                    <div className="flex items-center gap-2 py-2">
                       <span>{item.title}</span>
                       <Wrench className="w-4 h-4" />
                     </div>

@@ -34,7 +34,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     <>
       <h1>{post.frontmatter.title}</h1>
       <time className="text-muted-foreground text-sm">
-        {" "}
         Last Updated on: {post.frontmatter.date}
       </time>
       <MDXRemote source={post.content} />
